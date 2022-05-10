@@ -11,21 +11,14 @@ namespace Linkedlist
     {
             public static void Main(String[] args)
             {
-                /* Start with the empty list. */
-                LinkedList llist = new LinkedList();
+            usingAdd<int> add = new();
+            add.InsertFront(70);
+            add.InsertFront(30);
+            add.InsertFront(56);
 
-                llist.head = new Node(70);
-                Node second = new Node(30);
-                Node third = new Node(56);
-
-
-
-                llist.head.next = second; // Link first node with the second node
-
-
-                second.next = third; // Link second node with the third node
-                 Console.WriteLine("inserted elements");
-                  llist.display();
+            Console.WriteLine("The Elements of the Linkedlist are : ");
+           add.display();
+            Console.WriteLine("\n"); 
         }
         }
     }

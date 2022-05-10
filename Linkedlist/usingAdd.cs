@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace Linkedlist
 {
-
-
-    public class LinkedList
+    internal class usingAdd<T>
     {
-        internal Node head; // head of list
-
-
+        internal Node<T> head;
+        public void InsertFront(T data)
+        {
+            Node<T> new_node = new Node<T>(data);
+            new_node.next = head;
+            head = new_node;
+            
+        }
         public void display()
         {
-            Node temp = head;
+            Node<T> temp = head;
             while (temp != null)
             {
                 Console.WriteLine(temp.data);
@@ -24,7 +27,3 @@ namespace Linkedlist
         }
     }
 }
-        
-    
-
-   
