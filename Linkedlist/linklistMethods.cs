@@ -62,8 +62,17 @@ namespace Linkedlist
                 return;
             }
         }
+        public void pop_front()
+        {
+            if (this.head != null)
+            {
+                Node<T> temp = this.head;
+                this.head = this.head.next;
+                temp = null;
+            }
+        }
 
-        public void display()
+                public void display()
         {
             Node<T> temp = head;
             while (temp != null)
