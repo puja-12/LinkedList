@@ -16,6 +16,21 @@ namespace Linkedlist
             head = new_node;
             
         }
+        public void insertAfter(Node<T> prev_node, T new_data)
+        {
+            /* 1. Check if the given Node is null */
+            if (prev_node == null)
+            {
+                Console.WriteLine("The given previous" +
+                                  " node cannot be null");
+                return;
+            }
+
+            Node<T> new_node = new Node<T>(new_data);         
+            new_node.next = prev_node.next;
+            /* 5. make next of prev_node as new_node */
+            prev_node.next = new_node;
+        }
         public void append(T data)
         {
             /* 1. Allocate the Node &
