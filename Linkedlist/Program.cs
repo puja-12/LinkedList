@@ -9,17 +9,40 @@ namespace Linkedlist
 {
     class program
     {
-            public static void Main(String[] args)
+        public static void Main(String[] args)
+        {
+            while (true)
             {
-            usingAdd<int> add = new();
-            add.InsertFront(70);
-            add.InsertFront(30);
-            add.InsertFront(56);
+                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method");
+                int Option = Convert.ToInt32(Console.ReadLine());
+                switch (Option)
+                {
+                    case 1:
+                        usingAdd<int> Add = new();
+                        Add.InsertFront(70);
+                        Add.InsertFront(30);
+                        Add.InsertFront(56);
+                        Console.WriteLine("The Elements of the Linkedlist are : ");
+                        Add.display();
+                        Console.WriteLine("\n");
+                        break;
+                    case 2:
 
-            Console.WriteLine("The Elements of the Linkedlist are : ");
-           add.display();
-            Console.WriteLine("\n"); 
-        }
+                        usingAdd<int> appendmethod = new();
+                        appendmethod.InsertFront(56);
+                        appendmethod.append(70);
+                        appendmethod.append(30);             
+                        Console.WriteLine("The Elements of the Linkedlist are : ");
+                        appendmethod.display();
+                        Console.WriteLine("\n");
+                        break;
+
+
+
+                }
+            }
         }
     }
+}
+
 
