@@ -15,4 +15,5 @@ namespace Linkedlist
             this.data = data;
         }
     }
+    
 }

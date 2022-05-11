@@ -13,7 +13,7 @@ namespace Linkedlist
         {
             while (true)
             {
-                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end\n6)find position of Node\n7)add 40 after 30\n8)delete number after search");
+                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end\n6)find position of Node\n7)add 40 after 30\n8)delettion between nodes\n9)sortedLinklist");
                 int Option = Convert.ToInt32(Console.ReadLine());
                 switch (Option)
                 {
@@ -113,6 +113,16 @@ namespace Linkedlist
                         Console.WriteLine("The Elements of the Linkedlist are : ");
                         remove3.display();
                         Console.WriteLine("No. of nodes: " + remove3.countNodes());
+                        break;
+                    case 9:
+                        usingAdd<int> Sorting = new();
+                        Sorting.sortedInsert(56);
+                        Sorting.sortedInsert(30);
+                        Sorting.sortedInsert(40);
+                        Sorting.sortedInsert(70);
+                        Console.Write("The Sorted elements in LinkedList are: ");
+                        Sorting.display();
+                        Console.WriteLine("\n");
                         break;
 
                 }

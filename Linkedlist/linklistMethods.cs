@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Linkedlist
 {
-    internal class usingAdd<T>
+    internal class usingAdd<T> where T : IComparable<T>
     {
         internal Node<T> head;
         public void InsertFront(T data)
@@ -14,7 +14,7 @@ namespace Linkedlist
             Node<T> new_node = new Node<T>(data);
             new_node.next = head;
             head = new_node;
-            
+
         }
         public void insertAfter(Node<T> prev_node, T new_data)
         {
@@ -26,7 +26,7 @@ namespace Linkedlist
                 return;
             }
 
-            Node<T> new_node = new Node<T>(new_data);         
+            Node<T> new_node = new Node<T>(new_data);
             new_node.next = prev_node.next;
             /* 5. make next of prev_node as new_node */
             prev_node.next = new_node;
@@ -148,8 +148,31 @@ namespace Linkedlist
             previous.next = temp.next;
             return found;
         }
+        public void sortedInsert(T data)
+        {
+            Node<T> current;
+            Node<T> new_node = new Node<T>(data);
 
-        public void display()
+            /* Special case for head node */
+            if (head == null || (head.data.CompareTo(new_node.data) >= 0))
+            {
+                new_node.next = head;
+                head = new_node;
+            }
+            else
+            {
+                current = head;
+
+                while (current.next != null && (current.next.data.CompareTo(new_node.data)) < 0)
+                    current = current.next;
+
+                new_node.next = current.next;
+                current.next = new_node;
+            }
+        }
+    
+
+    public void display()
         {
             Node<T> temp = head;
             while (temp != null)
