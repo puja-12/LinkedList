@@ -13,7 +13,7 @@ namespace Linkedlist
         {
             while (true)
             {
-                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end");
+                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end\n6)find position of Node");
                 int Option = Convert.ToInt32(Console.ReadLine());
                 switch (Option)
                 {
@@ -75,7 +75,17 @@ namespace Linkedlist
                         remove2.display();
                         Console.WriteLine("\n");
                         break;
-
+                    case 6:
+                        usingAdd<int> found = new();
+                        found.InsertFront(56);
+                        found.InsertFront(70);
+                        found.InsertFront(30);
+                        Console.WriteLine("The Elements of the Linkedlist are : ");
+                        found.display();
+                        Console.WriteLine("find position of 30");
+                        found.SearchElement(30);
+                        found.display();
+                        break;
 
                 }
             }

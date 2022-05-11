@@ -91,6 +91,40 @@ namespace Linkedlist
                 }
             }
         }
+        public void SearchElement(T searchValue)
+        {
+            Node<T> temp = new Node<T>(searchValue);
+            temp = this.head;
+            int found = 0;
+            int i = 0;
+
+            if (temp != null)
+            {
+                while (temp != null)
+                {
+                    i++;
+                    if (temp.data.Equals(searchValue)) ;
+                    {
+                        found++;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (found == 1)
+                {
+                    Console.WriteLine(searchValue + " is found at index = " + i + ".");
+                }
+                else
+                {
+                    Console.WriteLine(searchValue + " is not found in the list.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The list is empty.");
+            }
+        }
+
 
         public void display()
         {
