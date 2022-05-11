@@ -13,7 +13,7 @@ namespace Linkedlist
         {
             while (true)
             {
-                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion");
+                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end");
                 int Option = Convert.ToInt32(Console.ReadLine());
                 switch (Option)
                 {
@@ -49,8 +49,7 @@ namespace Linkedlist
                         insert.display();
                         Console.WriteLine("\n");
                         break;
-                        case 4:
-
+                   case 4:
                         usingAdd<int> remove = new();
                         remove.InsertFront(70);
                         remove.InsertFront(30);
@@ -63,8 +62,19 @@ namespace Linkedlist
                         remove.display();
                         Console.WriteLine("\n");
                         break;
-
-
+                    case 5:
+                        usingAdd<int> remove2 = new();
+                        remove2.InsertFront(56);
+                        remove2.InsertFront(70);
+                        remove2.InsertFront(30);
+                        Console.WriteLine("The Elements of the Linkedlist are : ");
+                        remove2.display();
+                        Console.WriteLine("remove the last element");
+                        remove2.pop_back(56);
+                        Console.WriteLine("The final elements in LinkedList are:");
+                        remove2.display();
+                        Console.WriteLine("\n");
+                        break;
 
 
                 }
