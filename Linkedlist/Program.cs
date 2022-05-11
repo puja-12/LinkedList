@@ -13,7 +13,7 @@ namespace Linkedlist
         {
             while (true)
             {
-                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end\n6)find position of Node\n7)add 40 after 30");
+                Console.WriteLine("Select the Program to be Executed :\n1)Add in linklist\n2)Append Method\n3)insert between elements\n4)deletion from front\n5)delete from end\n6)find position of Node\n7)add 40 after 30\n8)delete number after search");
                 int Option = Convert.ToInt32(Console.ReadLine());
                 switch (Option)
                 {
@@ -31,7 +31,7 @@ namespace Linkedlist
                         usingAdd<int> appendmethod = new();
                         appendmethod.InsertFront(56);
                         appendmethod.append(30);
-                        appendmethod.append(70);             
+                        appendmethod.append(70);
                         Console.WriteLine("The Elements of the Linkedlist are : ");
                         appendmethod.display();
                         Console.WriteLine("\n");
@@ -44,12 +44,12 @@ namespace Linkedlist
                         insert.display();
                         Console.WriteLine("\n");
                         Console.WriteLine("Inserting the Element '30' in between 56 and 70");
-                        insert.insertAfter(insert.head, 30);            
+                        insert.insertAfter(insert.head, 30);
                         Console.WriteLine("The final elements in LinkedList are:");
                         insert.display();
                         Console.WriteLine("\n");
                         break;
-                   case 4:
+                    case 4:
                         usingAdd<int> remove = new();
                         remove.InsertFront(70);
                         remove.InsertFront(30);
@@ -98,11 +98,29 @@ namespace Linkedlist
                         Console.WriteLine("The final elements in LinkedList are:");
                         insert2.display();
                         break;
+                    case 8:
+                        usingAdd<int> remove3 = new();
+                        remove3.InsertFront(70);
+                        remove3.InsertFront(40);
+                        remove3.InsertFront(30);
+                        remove3.InsertFront(56);
+                        Console.WriteLine("The Elements of the Linkedlist are : ");
+                        remove3.display();
+                        Console.WriteLine("find position of 40");
+                        remove3.SearchElement(40);
+                        Console.WriteLine("remove the 40");
+                        remove3.popAt(40);
+                        Console.WriteLine("The Elements of the Linkedlist are : ");
+                        remove3.display();
+                        Console.WriteLine("No. of nodes: " + remove3.countNodes());
+                        break;
 
                 }
+
             }
         }
     }
+
 }
 
 
